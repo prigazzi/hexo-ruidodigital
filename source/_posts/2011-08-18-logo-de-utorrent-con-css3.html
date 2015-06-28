@@ -1,0 +1,87 @@
+layout: post
+title: Logo de uTorrent con CSS3
+permalink: /2011/08/18/logo-de-utorrent-con-css3/
+categories: CSS
+---
+<style>
+    #farouter {
+        -moz-border-radius: 150px;
+        -webkit-border-radius: 150px;
+        background-image: -moz-linear-gradient(top, #A2B3BC, #4F595F);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#A2B3BC), to(#4F595F));
+        border-radius: 150px;
+        box-shadow: 5px 5px 5px #ccc;
+        height: 300px;
+        margin: 10px auto;
+        position: relative;
+        width: 300px;
+    }
+
+    #closeouter {
+        -moz-border-radius: 135px;
+        -webkit-border-radius: 135px;
+        background-image: -moz-linear-gradient(top, #FDFDFD, #6F808A);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#FDFDFD), to(#6F808A));
+        border-radius: 135px;
+        height: 270px;
+        margin: auto;
+        position: absolute;
+        top: 15px; left: 15px;
+        width: 270px;
+    }
+
+    #farinner {
+        -moz-border-radius: 110px;
+        -webkit-border-radius: 110px;
+        background-color: #198117;
+        border-radius: 110px;
+        height: 220px;
+        left: 25px; top: 25px;
+        margin: auto;
+        position: absolute;
+        width: 220px;
+    }
+
+    #closeinner {
+        -moz-border-radius: 100px;
+        -webkit-border-radius: 100px;
+        background-image: -moz-linear-gradient(top, #66CF66, #005E00);
+        background-image: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#66CF66), to(#005E00));
+        border-radius: 100px;
+        height: 200px;
+        margin: auto;
+        position: absolute;
+        top: 10px; left: 10px;
+        width: 200px;
+    }
+
+    #mu {
+        color: white;
+        display: block;
+        font-family: Tahoma;
+        font-size: 230px;
+        font-weight: bolder;
+        left: 20px;
+        line-height: 100px;
+        position: absolute;
+        text-shadow: 8px 8px 1px rgba(0, 0, 0, .4), 16px 16px 1px rgba(0, 0, 0, 0.2);
+    }
+</style>
+<p>Últimamente estoy saboreando de nuevo esa sensación de "novato" en una tecnología que todos conocemos, como el <strong>HTML y el CSS</strong>, pero que de la mano de su nueva versión nos "obliga" a probar sus nuevas capacidades.</p>
+
+<p>Qué divertido entonces ponerse a jugar con aspectos nuevos como los <strong>bordes redondeados</strong> (border-radius), los gradientes como <strong>color de fondo</strong> (-webkit-gradient y -moz-linear-gradient) y las <strong>sombras para los textos</strong> (text-shadow).</p>
+
+<!--more-->
+
+<div id="farouter">
+<div id="closeouter">
+<div id="farinner">
+<div id="closeinner"><span id="mu">μ</span></div>
+</div>
+</div>
+</div>
+<p>Como muestra, les dejo la imagen más arriba, enteramente hecha con CSS3 y un poco de HTML. Seguramente se puede hacer 10 veces mejor y 15 veces más ordenado, si se animan a publicar una versión mejorada, podemos aprovechar para aprender un poco más sobre este nuevo estándard.</p>
+
+<p>¿Qué otros logos o símbolos representarías con CSS3?</p>
+
+<p><strong>Update</strong>: les dejo el link del <a href="http://www.cristalab.com/tutoriales/crea-el-logo-de-utorrent-con-css3-c99961l/">Tutorial en Cristalab</a>.</p>
