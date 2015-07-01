@@ -1,5 +1,6 @@
 layout: post
 title: "Comenzando un blog de cero"
+permalink: comenzando-un-blog-de-cero
 date: 2013-03-03
 categories: General
 ---

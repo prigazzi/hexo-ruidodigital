@@ -1,5 +1,6 @@
 layout: post
 title: "Cómo usar Yahoo Query Language"
+permalink: como-user-yahoo-query-language
 date: 2013-08-13
 categories: [Javascript, APIs]
 ---

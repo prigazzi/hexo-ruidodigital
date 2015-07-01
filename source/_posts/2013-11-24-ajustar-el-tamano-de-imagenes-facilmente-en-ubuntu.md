@@ -1,7 +1,8 @@
 layout: post
 title: Ajustar el tamaño de imágenes fácilmente en Ubuntu
 date: 2011-08-31
-permalink: /2011/08/31/ajustar-el-tamano-de-imagenes-facilmente-en-ubuntu/
+alias: 2011/08/31/ajustar-el-tamano-de-imagenes-facilmente-en-ubuntu
+permalink: ajustar-el-tamano-de-imagenes-facilmente-en-ubuntu
 categories:
 - General
 ---
