@@ -5,6 +5,7 @@ permalink: logo-de-utorrent-con-css3
 date: 2011-08-18
 categories: CSS
 ---
+{% raw %}
 <style>
     #farouter {
         -moz-border-radius: 150px;
@@ -69,10 +70,10 @@ categories: CSS
         text-shadow: 8px 8px 1px rgba(0, 0, 0, .4), 16px 16px 1px rgba(0, 0, 0, 0.2);
     }
 </style>
-<p>Últimamente estoy saboreando de nuevo esa sensación de "novato" en una tecnología que todos conocemos, como el <strong>HTML y el CSS</strong>, pero que de la mano de su nueva versión nos "obliga" a probar sus nuevas capacidades.</p>
+{% endraw %}
+Últimamente estoy saboreando de nuevo esa sensación de "novato" en una tecnología que todos conocemos, como el **HTML y el CSS**, pero que de la mano de su nueva versión nos "obliga" a probar sus nuevas capacidades.
 
-<p>Qué divertido entonces ponerse a jugar con aspectos nuevos como los <strong>bordes redondeados</strong> (border-radius), los gradientes como <strong>color de fondo</strong> (-webkit-gradient y -moz-linear-gradient) y las <strong>sombras para los textos</strong> (text-shadow).</p>
-
+Qué divertido entonces ponerse a jugar con aspectos nuevos como los **bordes redondeados** (border-radius), los gradientes como **color de fondo** (-webkit-gradient y -moz-linear-gradient) y las **sombras para los textos** (text-shadow).
 <!--more-->
 
 <div id="farouter">
@@ -82,8 +83,9 @@ categories: CSS
 </div>
 </div>
 </div>
-<p>Como muestra, les dejo la imagen más arriba, enteramente hecha con CSS3 y un poco de HTML. Seguramente se puede hacer 10 veces mejor y 15 veces más ordenado, si se animan a publicar una versión mejorada, podemos aprovechar para aprender un poco más sobre este nuevo estándard.</p>
 
-<p>¿Qué otros logos o símbolos representarías con CSS3?</p>
+Como muestra, les dejo la imagen más arriba, enteramente hecha con CSS3 y un poco de HTML. Seguramente se puede hacer 10 veces mejor y 15 veces más ordenado, si se animan a publicar una versión mejorada, podemos aprovechar para aprender un poco más sobre este nuevo estándard.
 
-<p><strong>Update</strong>: les dejo el link del <a href="http://www.cristalab.com/tutoriales/crea-el-logo-de-utorrent-con-css3-c99961l/">Tutorial en Cristalab</a>.</p>
+¿Qué otros logos o símbolos representarías con CSS3?
+
+**Update**: les dejo el link del [Tutorial en Cristalab](http://www.cristalab.com/tutoriales/crea-el-logo-de-utorrent-con-css3-c99961l/).

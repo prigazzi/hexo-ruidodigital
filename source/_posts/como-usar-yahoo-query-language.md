@@ -4,13 +4,13 @@ permalink: como-user-yahoo-query-language
 date: 2013-08-13
 categories: [Javascript, APIs]
 ---
-Con la mudanza del blog, uno de los primeros temas a los que quería dedicarme era generar una buena página de Error 404 donde aquellas personas que llegaran desde links desactualizados, pudieran tener acceso al viejo contenido de manera sencilla. Les dejo [un ejemplo de lo que buscaba lograr](http://www.ruidodigital.com/2011/08/31/ajustar-el-tamano-de-imagenes-facilmente-en-ubuntu/). Comencé creando un archivo **404.html** en la raíz del blog y agregué una línea a mi .htaccess (si, estoy hospedando con Apache en este momento).
+Con la mudanza del blog, uno de los primeros temas a los que quería dedicarme era generar una buena página de Error 404 donde aquellas personas que llegaran desde links desactualizados, pudieran tener acceso al viejo contenido de manera sencilla. Les dejo {% post_link ajustar-el-tamano-de-imagenes-facilmente-en-ubuntu un ejemplo de lo que buscaba lograr %}. Comencé creando un archivo **404.html** en la raíz del blog y agregué una línea a mi .htaccess (si, estoy hospedando con Apache en este momento).
 
 ``` apache .htaccess
 ErrorDocument 404 /404.html
 ```
 
-Ahora viene lo interesante. Dado que estoy utilizando [Jekyll como generador del blog]({% post_url 2013-03-03-comenzando-un-blog-de-cero %}), no tengo soporte de un lenguaje del lado del servidor. **Son todos archivos estáticos**. Mi solución tendría que venir del lado del cliente, así que pensé : _¿De qué manera puedo chequear la existencia de un sitio web, desde Javascript?_ <!--more-->
+Ahora viene lo interesante. Dado que estoy utilizando {% post_link comenzando-un-blog-de-cero Jekyll como generador del blog %}, no tengo soporte de un lenguaje del lado del servidor. **Son todos archivos estáticos**. Mi solución tendría que venir del lado del cliente, así que pensé : _¿De qué manera puedo chequear la existencia de un sitio web, desde Javascript?_ <!--more-->
 
 Aquí es donde [Yahoo Query Language](http://developer.yahoo.com/yql/) viene al rescate. Yahoo Query Language (a partir de ahora **YQL**) es una serie de datos estructurados puestos a disposición del público por parte de Yahoo. Los podemos consultar haciendo uso de una API, desde diferentes tipos de lenguajes de programación, y recibiendo los datos ya sea en XML o en formato JSON. Incluso, tenemos una [consola para realizar pruebas](http://developer.yahoo.com/yql/console/).
 
@@ -35,22 +35,22 @@ Para ejecutar este query, lo que debemos hacer es armar una URL completa haciend
 ``` js
 var to_old = url.replace(/((www\.)?ruidodigital)/gm, "old.ruidodigital");
 var query = "http://query.yahooapis.com/v1/public/yql?"+
-			"q=SELECT%20*%20from%20html%20WHERE%20url%3D%22"+encodeURIComponent(to_old)+
-			"%22%20and%0A%20xpath%3D%27%2F%2Ftitle%27&format=json&callback=show_result";
+            "q=SELECT%20*%20from%20html%20WHERE%20url%3D%22"+encodeURIComponent(to_old)+
+            "%22%20and%0A%20xpath%3D%27%2F%2Ftitle%27&format=json&callback=show_result";
 
 $(function()
 {
-	var head = document.getElementsByTagName('head')[0];
-	var js = document.createElement("script");
-	js.type="text/javascript"; js.src = query;
-	head.appendChild(js);
+    var head = document.getElementsByTagName('head')[0];
+    var js = document.createElement("script");
+    js.type="text/javascript"; js.src = query;
+    head.appendChild(js);
 })
 
 ```
 
 De esta manera, al ejecutar esta parte del código, lo que recibiremos dentro del tag `script` que acabamos de crear y anexar al head, es una respuesta en JSON como la siguiente (usando como ejemplo, la url **http://old.ruidodigital.com**): 
 
-``` json
+``` javascript
 show_result({
     "query": {
         "count": 1,
@@ -67,19 +67,21 @@ Solo nos queda definir en alguna parte de nuestro código, un método llamado `s
 
 ``` html
 <p id="sugerencia" class="well well-small" style="display: none;">
-	Parece que ingresaste buscando <span id="url" style="font-weight: bold;"></span>, que ya no se encuentra disponible en este blog, pero aún puedes leerlo en el viejo <span class="logo">ruido<span>digital</span></span>: <a id="oldurl" href=""></a>.
+    Parece que ingresaste buscando <span id="url" style="font-weight: bold;"></span>, 
+    que ya no se encuentra disponible en este blog, pero aún puedes 
+    leerlo en el viejo <span class="logo">ruido<span>digital</span></span>: <a id="oldurl" href=""></a>.
 </p>
 <script>
-	function show_result(rs)
-	{
-		if(rs.query.count) {
-			$('#sugerencia #url').html(url);
-			$('#sugerencia #oldurl')
-				.attr('href', to_old)
-				.html(rs.query.results.title);
-			$('#sugerencia').slideDown();
-		}
-	}
+    function show_result(rs)
+    {
+        if(rs.query.count) {
+            $('#sugerencia #url').html(url);
+            $('#sugerencia #oldurl')
+                .attr('href', to_old)
+                .html(rs.query.results.title);
+            $('#sugerencia').slideDown();
+        }
+    }
 </script>
 ```
 
